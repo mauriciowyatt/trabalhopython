@@ -1,0 +1,101 @@
+Trabalho
+Paradigmas
+ de 
+Linguagens
+ de 
+Programação em Python
+Universidade Estácio de Sá
+
+
+
+Turno:Noite
+Nome: Maurício Gabriel Ribeiro Wyatt
+Matrícula:202203215876
+Escolha 3 questões  das 6 de cada lista(I e II), faça os três utilizando Python e todos os conhecimentos que acumulamos até aqui, além dos seis códigos, documente em cada um sua linha de raciocínio para desenvolver as respostas. Preferível entrega feita pelo link do seu git(github, gitlab ou outro)
+
+                                 LISTA I
+
+1)Tendo como dados de entrada a altura e o sexo de uma pessoa, construa um algoritmo que calcule seu 
+peso ideal, utilizando as seguintes fórmulas:
+Para homens: (72.7*h) - 58
+Para mulheres: (62.1*h) - 44.7 (h = altura)
+Peça o peso da pessoa e informe se ela está dentro, acima ou abaixo do peso. '''
+
+sexo = int(input('Escolha: 1- Sexo Masculino / 2- Sexo Feminino: '))
+h = float(input('Altura:'))
+peso = float(input('Peso:'))
+
+peso_ideal = (72.7*h) - 58 if sexo == 1 else (62.1*h) - 44.7
+
+if peso < peso_ideal:
+	print('Abaixo do peso ideal!')
+elif peso == peso_ideal:
+	print('Dentro do peso ideal!')
+else:
+	print('Acima do peso ideal!')
+print ('Peso: %.2f / Peso ideal: %.2f' %(peso, peso_ideal))
+
+#Consegui deixar esse código um pouco melhorado através das estruturas condicionais( if,else e elif) e usando um pouco de matemática básica tornou-se um código mais simplificado
+
+
+2)João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o
+rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior que o
+estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar uma
+multa de R$ 4,00 por quilo excedente. João precisa que você faça um programa que leia a
+variável peso (peso de peixes) e calcule o excesso. Gravar na variável excesso a quantidade
+de quilos além do limite e na variável multa o valor da multa que João deverá pagar. Imprima
+os dados do programa com as mensagens adequadas.
+
+pesoLimite = 50
+peso = float(input("Digite a quantidade de kg de peixe que João trouxe: "))
+if peso > pesoLimite:
+    excesso = peso - pesoMaximo
+    multa = excesso * 4.00
+    print ("Multa foi de " + str(multa) + " reais")
+
+# Utilizando o recurso If como umas das estruturas condicionais. Traduzindo ele ''Se peso for maior que pesoMaximo,ou seja, ultrapassando o limite de (50 quilos) deverá pagar 4 reais por quilo.''
+
+
+6. Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de
+um link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo
+usando este link (em minutos)
+
+tamanho = float(input('Tamanho do arquivo (MB): '))
+velocidade = float(input('Velocidade de Internet (MBps): '))
+print('Tempo aproximado de download: %.0f Minutos ' %((tamanho / velocidade) * 60))
+
+# Através da matemática básica bastei dividir o tamanho em Mb por velocidade em Mbps e multiplicar por 60 segundos/ 1 minuto.
+
+                                       LISTA 2
+
+2. Faça um Programa que peça um número inteiro e determine se ele é par ou ímpar.
+numero = int(input('Digite um inteiro: '))
+
+    if (numero%2) == 0:
+        print("Par")
+    else:
+        print("Ímpar")
+
+#Novamente através da estruturas condicionais if e else, usando elas caso o numero tivesse resto 2 ele seria par, do contrária seria ímpar.
+
+3. Faça um Programa que peça um número e informe se o número é inteiro ou decimal. 
+
+numero = float(input('Digite um numero :'))
+
+if(numero // 1 == numero): 
+    print('Número inteiro !')
+else:
+    print('Número Decimal !')
+
+#Se o número representado pelas ''//'' na divisao ele será inteiro, se não decimal.
+
+
+5. Faça um Programa que leia uma estrutura A com 10 números inteiros, calcule e mostre a soma dos quadrados dos elementos desta estrutura.
+
+soma = 0
+for numero in range(0, 10):
+    elementoA.append(int(input("Digite um número: ")))
+    soma = soma + (elementoA[len(vetorA)-1]**2)
+print("A soma dos quadrados dos elementos são " + str(soma))
+
+#usando range para que os elementos contidos sejam gerados sob demanda e usando append para adicionar a lista inteira ao invés dos seus itens complementando a matemática não tão basica o programa consegue dar andamento.
